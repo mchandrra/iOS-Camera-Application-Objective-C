@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -8,36 +8,47 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9gf-wv-tMy"/>
+                        <viewControllerLayoutGuide type="bottom" id="NBj-qV-tLO"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="gc8-2h-GXC">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="474"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7nR-va-pog">
-                                <rect key="frame" x="108" y="520" width="105" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <state key="normal" title="Choose Picture"/>
-                                <connections>
-                                    <action selector="choosePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RhM-bg-G1U"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5EZ-kw-wP8">
-                                <rect key="frame" x="106" y="490" width="108" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EZ-kw-wP8">
+                                <rect key="frame" x="246" y="522" width="108" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Capture Picture"/>
                                 <connections>
                                     <action selector="capturePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BPA-ej-SU4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nR-va-pog">
+                                <rect key="frame" x="248" y="552" width="105" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Choose Picture"/>
+                                <connections>
+                                    <action selector="choosePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RhM-bg-G1U"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gc8-2h-GXC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="506"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5EZ-kw-wP8" firstAttribute="centerX" secondItem="7nR-va-pog" secondAttribute="centerX" id="AAl-bz-aWw"/>
+                            <constraint firstAttribute="trailing" secondItem="gc8-2h-GXC" secondAttribute="trailing" id="CAS-at-lyI"/>
+                            <constraint firstItem="7nR-va-pog" firstAttribute="top" secondItem="5EZ-kw-wP8" secondAttribute="bottom" id="K41-ul-UTg"/>
+                            <constraint firstItem="gc8-2h-GXC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PPJ-0e-H2O"/>
+                            <constraint firstItem="gc8-2h-GXC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aC9-qE-wby"/>
+                            <constraint firstItem="NBj-qV-tLO" firstAttribute="top" secondItem="7nR-va-pog" secondAttribute="bottom" constant="18" id="t2u-ER-gbk"/>
+                            <constraint firstItem="5EZ-kw-wP8" firstAttribute="centerX" secondItem="gc8-2h-GXC" secondAttribute="centerX" id="vh1-nA-wHR"/>
+                            <constraint firstItem="5EZ-kw-wP8" firstAttribute="top" secondItem="gc8-2h-GXC" secondAttribute="bottom" constant="16" id="voZ-ck-BKb"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="gc8-2h-GXC" id="hfB-Jq-ih4"/>
@@ -45,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="368"/>
+            <point key="canvasLocation" x="303.75" y="388.73239436619713"/>
         </scene>
     </scenes>
 </document>
